@@ -1,0 +1,15 @@
+{
+  "name": "pie-cli",
+  "version": "0.1.0",
+  "description": "react项目的脚手架",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --watch",
+    "build": "webpack --watch"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "jyu siu",
+  "license": "MIT"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "pie-cli",
+  "version": "0.1.0",
+  "description": "react项目的脚手架",
+  "bin": {
+    "piecli": "./bin/pie-cli.js"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "jyu siu",
+  "license": "MIT",
+  "devDependencies": {
+    "commander": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.0"
+  }
+}
