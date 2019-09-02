@@ -1,7 +1,7 @@
 const packageJsonMeta = {
   version: '0.1.0',
   author: '',
-  license: '',
+  license: 'MIT',
   main: 'index.js',
   scripts: {
     dev: 'webpack-dev-server --config ./webpack/webpack.dev.js',
@@ -9,6 +9,11 @@ const packageJsonMeta = {
   }
 }
 
+const fileMeta = {
+
+}
+
 module.exports = {
   packageJsonMeta,
+  fileMeta,
 }
