@@ -6,6 +6,7 @@
     "piecli": "./bin/pie-cli.js"
   },
   "keywords": [
+    "React",
     "cli"
   ],
   "author": "jyu siu",
@@ -13,6 +14,7 @@
   "devDependencies": {
     "commander": "^3.0.0",
     "fs-extra": "^8.1.0",
-    "inquirer": "^7.0.0"
+    "inquirer": "^7.0.0",
+    "validate-npm-package-name": "^3.0.0"
   }
 }

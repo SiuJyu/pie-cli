@@ -16,10 +16,16 @@ program.command("init")
   .action((cmd) => {
     init(getCmdOptions(cmd))
   })
+
 program.command("use")
   .description("Choose a template")
   .action(() => {
     console.warn('暂不支持模板选择')
+  })
+
+program.arguments('<command>')
+  .action(cmd => {
+    program.outputHelp()
   })
 
 

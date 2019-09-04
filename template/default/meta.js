@@ -4,14 +4,21 @@ const packageJsonMeta = {
   license: 'MIT',
   main: 'index.js',
   scripts: {
-    dev: 'webpack-dev-server --config ./webpack/webpack.dev.js',
-    build: 'webpack --watch --config ./webpack/webpack.prod.js',
+    dev: 'NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.js',
+    build: 'NODE_ENV=production webpack --progress --config ./webpack/webpack.prod.js',
   }
 }
 
-const fileMeta = {
-
-}
+const fileMeta = [{
+  file: 'tsconfig.json',
+  when(options) {
+    return options['language'] === 'ts'
+  }
+}, {
+  file: '.eslintrc.js',
+}, {
+  file: 'package.json',
+}]
 
 module.exports = {
   packageJsonMeta,

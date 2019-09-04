@@ -2,27 +2,14 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack.base');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge.smart(base, {
   mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'style-loader' },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-          },
-          { loader: '{{css-precessor-loader}}' }
-        ]
-      }
-    ]
-  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].[contenthash:8].css',
+      chunkFilename: 'styles/[name].[contenthash:8].chunk.css',
+    }),
+  ],
 })

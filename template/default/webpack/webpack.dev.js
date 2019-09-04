@@ -15,26 +15,6 @@ module.exports = merge.smart(base, {
     host: '0.0.0.0',
     port: 3000,
   },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {}
-          }, // 生产环境将css提成单独的文件
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true
-            }
-          },
-          { loader: 'sass-loader' }
-        ]
-      }
-    ]
-  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'styles/[name].[hash].css',
