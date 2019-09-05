@@ -7,6 +7,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const cssLoaders = [
+  {
+    loader: process.env.NODE_ENV === 'production'
+      ? MiniCssExtractPlugin.loader
+      : 'style-loader',
+  }, // 生产环境将css提成单独的文件
+  {
+    loader: 'css-loader',
+  },
+  {
+    loader: 'postcss-loader',
+    options: {
+      ident: 'postcss',
+    }
+  }
+]
+
 module.exports = {
   entry: {
     main: path.resolve(__dirname, '../src/index')
@@ -30,31 +47,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: process.env.NODE_ENV === 'production'
-              ? MiniCssExtractPlugin.loader
-              : 'style-loader',
-          }, // 生产环境将css提成单独的文件
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-            }
-          }
-        ]
+        use: cssLoaders,
       }, {
         test: /\.less$/,
-        use: 'less-loader',
+        use: [...cssLoaders, { loader: 'less-loader' }],
       }, {
         test: /\.(sc|sa)ss$/,
-        use: 'sass-loader',
+        use: [...cssLoaders, { loader: 'sass-loader' }],
       }, {
         test: /\.styl(us)?$/,
-        use: 'stylus-loader',
+        use: [...cssLoaders, { loader: 'stylus-loader' }],
       }, {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: 'file-loader',

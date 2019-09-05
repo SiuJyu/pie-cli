@@ -9,18 +9,14 @@ const packageJsonMeta = {
   }
 }
 
-const fileMeta = [{
-  file: 'tsconfig.json',
+const fileFilters = [{
+  name: ['tsconfig.json', 'types'],
   when(options) {
     return options['language'] === 'ts'
   }
-}, {
-  file: '.eslintrc.js',
-}, {
-  file: 'package.json',
 }]
 
 module.exports = {
   packageJsonMeta,
-  fileMeta,
+  fileFilters,
 }
