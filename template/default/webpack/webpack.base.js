@@ -59,7 +59,14 @@ module.exports = {
         use: [...cssLoaders, { loader: 'stylus-loader' }],
       }, {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        use: 'file-loader',
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
     ],
   },

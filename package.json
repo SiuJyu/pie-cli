@@ -16,5 +16,14 @@
     "fs-extra": "^8.1.0",
     "inquirer": "^7.0.0",
     "validate-npm-package-name": "^3.0.0"
+  },
+  "homepage": "https://github.com/SiuJyu/pie-cli/blob/develop/README.md",
+  "bugs": {
+    "url": "https://github.com/SiuJyu/pie-cli/issues",
+    "email": "siujyu@qq.com"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/SiuJyu/pie-cli.git"
   }
 }
